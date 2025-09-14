@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Redirecting to Artist...</title>
+  <script>
+    function redirect() {
+      // Replace with YOUR Spotify Artist ID
+      const artistId = "0hHUrdY0uxn5mnnATFxpm4"; // 
+      const spotifyApp = spotify://artist/${artistId};
+      const spotifyWeb = https://open.spotify.com/artist/${artistId};
+
+      // Try opening in app
+      window.location = spotifyApp;
+
+      // Fallback to web if app isn’t installed
+      setTimeout(() => {
+        window.location = spotifyWeb;
+      }, 1000);
+    }
+  </script>
+</head>
+<body onload="redirect()">
+  <p>Redirecting you to my Spotify artist profile…</p>
+</body>
+</html>
